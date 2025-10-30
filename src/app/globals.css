@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: linear-gradient(to bottom right, #c8dce5 0%, #b6ccda 100%);
+  --foreground: #fff;
+  --color1: #404354;
+  --color2: #58d7c4;
+  --color3: #f2cec6;
+}
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 732px) minmax(0, 450px) minmax(0, 34px) 1fr;
+  grid-template-rows: repeat(4, min-content);
+
+  > * {
+    grid-column: 2 / 5;
+  }
+}
+
+.menu {
+  display: flex;
+  grid-row: 1 / 2;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 80px;
+
+  > div span {
+    position: relative;
+    color: #b6ccda;
+
+    &::after {
+      content: "";
+      width: 130px;
+      height: 36px;
+      position: absolute;
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 7px 35px;
+      z-index: -1;
+      top: -31%;
+      left: -60%;
+    }
+  }
+
+  > svg {
+    height: 50px;
+    width: 50px;
+  }
+
+  > div > svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  li {
+    font-size: 1.2rem;
+  }
+}
+
+.buy {
+  background: transparent;
+  border: solid 3px #fff;
+  padding: 15px 80px;
+  border-radius: 50px;
+  grid-row: 2;
+  justify-self: start;
+  font-size: 1.7rem;
+  margin-bottom: 2.3rem;
+}
+
+.WatchSelection {
+  grid-column: 1;
+  grid-row: 1;
+  height: 60px;
+  width: 130px;
+  background: color-mix(in srgb, var(--color1), transparent 40%);
+  border-radius: 8px;
+  place-self: end;
+  z-index: -1;
+}
