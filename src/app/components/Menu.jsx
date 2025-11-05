@@ -5,7 +5,7 @@ import { RxDividerVertical } from "react-icons/rx";
 
 const Menu = () => {
   return (
-    <div className="menu">
+    <div className="menu row-start-1 row-end-2 flex mt-[30px] mb-[80px] items-center justify-between col-start-2 col-end-5">
       <DiApple />
       <div>
         <ul className="flex gap-20">
