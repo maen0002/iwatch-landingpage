@@ -6,39 +6,21 @@
   --color1: #404354;
   --color2: #58d7c4;
   --color3: #f2cec6;
+  --grid-cols-big: 1fr minmax(0, 732px) minmax(0, 450px) minmax(0, 34px) 1fr;
+  --grid-rows-big: repeat(4, min-content);
 }
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-} */
+@theme inline {
+  --padding-button: 15px 80px;
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  height: 100vh;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 732px) minmax(0, 450px) minmax(0, 34px) 1fr;
-  grid-template-rows: repeat(4, min-content);
-
-  > * {
-    grid-column: 2 / 5;
-  }
+  height: 100svh;
 }
 
 .menu {
-  display: flex;
-  grid-row: 1 / 2;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-  margin-bottom: 80px;
-
   > div span {
     position: relative;
     color: #b6ccda;
@@ -70,26 +52,4 @@ body {
   li {
     font-size: 1.2rem;
   }
-}
-
-.buy {
-  background: transparent;
-  border: solid 3px #fff;
-  padding: 15px 80px;
-  border-radius: 50px;
-  grid-row: 2;
-  justify-self: start;
-  font-size: 1.7rem;
-  margin-bottom: 2.3rem;
-}
-
-.WatchSelection {
-  grid-column: 1;
-  grid-row: 1;
-  height: 60px;
-  width: 130px;
-  background: color-mix(in srgb, var(--color1), transparent 40%);
-  border-radius: 8px;
-  place-self: end;
-  z-index: -1;
 }
